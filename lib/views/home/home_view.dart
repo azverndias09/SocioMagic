@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:socio_magic_web/widgets/custom_clipper.dart';
+import 'package:socio_magic_web/widgets/gradient_header_text.dart';
 import 'package:socio_magic_web/widgets/navigation_bar/navigation_bar.dart';
 
 const LinearGradient _gradient = LinearGradient(colors: <Color>[
@@ -433,29 +434,6 @@ class _GradientOutlinedButton extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class HeaderGradientText extends StatelessWidget {
-  const HeaderGradientText({Key? key, required this.text}) : super(key: key);
-
-  final String text;
-  @override
-  Widget build(BuildContext context) {
-    return ShaderMask(
-      shaderCallback: (Rect bounds) {
-        return _gradient.createShader(bounds);
-      },
-      child: Text(
-        text,
-        style: GoogleFonts.poppins(
-          textStyle: Theme.of(context).textTheme.bodyText2,
-          fontSize: 43,
-          fontWeight: FontWeight.w500,
-          color: Colors.white,
         ),
       ),
     );

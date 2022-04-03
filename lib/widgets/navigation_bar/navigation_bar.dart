@@ -25,7 +25,7 @@ class NavBar extends StatelessWidget {
                   textStyle: Theme.of(context).textTheme.headline2,
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xff00ADB8),
+                  color: const Color(0xff00ADB8),
                 ),
               ),
             ],
