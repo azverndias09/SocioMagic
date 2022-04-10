@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:socio_magic_web/widgets/custom_clipper.dart';
+import 'package:socio_magic_web/widgets/customClippers/custom_clipper.dart';
+import 'package:socio_magic_web/widgets/footer_bar/footer.dart';
+import 'package:socio_magic_web/widgets/gradient_filled_button.dart';
 import 'package:socio_magic_web/widgets/gradient_header_text.dart';
+import 'package:socio_magic_web/widgets/gradient_sub_header.dart';
+import 'package:socio_magic_web/widgets/linear_gradient.dart';
 import 'package:socio_magic_web/widgets/navigation_bar/navigation_bar.dart';
-
-const LinearGradient _gradient = LinearGradient(colors: <Color>[
-  Color(0xff00A3FF),
-  Color(0xff31E3CB),
-]);
+import 'package:socio_magic_web/widgets/subWhiteText.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -37,21 +37,8 @@ class HomeView extends StatelessWidget {
                         width: 560,
                         child: Column(
                           children: [
-                            ShaderMask(
-                              shaderCallback: (Rect bounds) {
-                                return _gradient.createShader(bounds);
-                              },
-                              child: Text(
-                                "Reach The Right People, The Right Way!",
-                                style: GoogleFonts.poppins(
-                                  textStyle:
-                                      Theme.of(context).textTheme.bodyText2,
-                                  fontSize: 47,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
+                            const GradientSubHeaderText(
+                                text: 'Reach The Right People, The Right Way!'),
                             const SizedBox(
                               height: 10,
                             ),
@@ -68,7 +55,7 @@ class HomeView extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: const [
-                                _Gradientbuttonfilled(
+                                GradientButtonFilled(
                                   name: 'Login',
                                 ),
                                 SizedBox(
@@ -147,7 +134,7 @@ class HomeView extends StatelessWidget {
                             text:
                                 "Do you want to sharpen your skills? We have got you all covered."),
                       ),
-                      _Gradientbuttonfilled(name: "See Workshops"),
+                      GradientButtonFilled(name: "See Workshops"),
                     ],
                   ),
                   SizedBox(
@@ -216,7 +203,7 @@ class HomeView extends StatelessWidget {
                               text: "Connect with people who love your idea"),
                           const Padding(
                               padding: EdgeInsets.symmetric(vertical: 20)),
-                          const _Gradientbuttonfilled(name: "Sell Your Ideas"),
+                          const GradientButtonFilled(name: "Sell Your Ideas"),
                           const Padding(
                               padding: EdgeInsets.symmetric(vertical: 20)),
                         ],
@@ -226,167 +213,11 @@ class HomeView extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 345,
-              width: 1300,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 100, 0),
-                        child: SizedBox(
-                          width: 633,
-                          height: 135,
-                          child: Text(
-                            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-                            style: GoogleFonts.poppins(
-                              textStyle: Theme.of(context).textTheme.subtitle1,
-                              fontSize: 18,
-                              color: const Color(0xffBFC5D7),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 285,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text("Subscribe",
-                                  style: GoogleFonts.poppins(
-                                      textStyle:
-                                          Theme.of(context).textTheme.button,
-                                      fontSize: 18,
-                                      color: const Color(0xffBFC5D7))),
-                            ),
-                            const SizedBox(height: 10),
-                            const EmailEnterBox(),
-                            const SizedBox(height: 10),
-                            Text(
-                              "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ",
-                              style: GoogleFonts.roboto(
-                                textStyle: Theme.of(context).textTheme.caption,
-                                fontSize: 12,
-                                color: const Color(0xffBFC5D7),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Column(
-                        children: [
-                          Text("Quick Links:",
-                              style: GoogleFonts.poppins(
-                                textStyle: Theme.of(context).textTheme.button,
-                                fontSize: 18,
-                                color: Colors.white,
-                              )),
-                          SizedBox(
-                            width: 105,
-                            child: Column(
-                              children: const [
-                                Align(
-                                    alignment: Alignment.centerRight,
-                                    child: LinkText(name: "Home")),
-                                Align(
-                                    alignment: Alignment.centerRight,
-                                    child: LinkText(name: "Link 1")),
-                                Align(
-                                    alignment: Alignment.centerRight,
-                                    child: LinkText(name: "Link 2")),
-                                Align(
-                                    alignment: Alignment.centerRight,
-                                    child: LinkText(name: "Link 3")),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 18),
-                  const Divider(
-                    color: Color(0xffBFC5D7),
-                    thickness: 0.62,
-                    indent: 10,
-                    endIndent: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "SOCIOMAGIC",
-                          style: GoogleFonts.poppins(
-                            textStyle: Theme.of(context).textTheme.headline2,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xff00ADB8),
-                          ),
-                        ),
-                        Row(
-                          children: const [
-                            FooterIcon(
-                                iconImage: "assets/images/googleLogo.png"),
-                            FooterIcon(
-                                iconImage: "assets/images/facebookLogo.png"),
-                            FooterIcon(
-                                iconImage: "assets/images/twitterLogo.png"),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const FooterPart()
           ],
         ),
       ),
     );
-  }
-}
-
-class _Gradientbuttonfilled extends StatelessWidget {
-  const _Gradientbuttonfilled({
-    Key? key,
-    required this.name,
-  }) : super(key: key);
-
-  final String name;
-  @override
-  Widget build(BuildContext context) {
-    return DecoratedBox(
-        decoration: BoxDecoration(
-          gradient: _gradient,
-          borderRadius: BorderRadius.circular(5),
-        ),
-        child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.transparent,
-              onSurface: Colors.transparent,
-              shadowColor: Colors.transparent,
-
-              minimumSize: const Size(183, 50),
-              //make color or elevated button transparent
-            ),
-            onPressed: () {},
-            child: Padding(
-                padding: const EdgeInsets.only(),
-                child: Text(
-                  name,
-                  style: GoogleFonts.poppins(
-                    textStyle: Theme.of(context).textTheme.button,
-                    fontSize: 18,
-                    color: const Color(0xff080b15),
-                  ),
-                ))));
   }
 }
 
@@ -406,7 +237,7 @@ class _GradientOutlinedButton extends StatelessWidget {
           width: 2,
           color: Colors.blue,
         ),
-        gradient: _gradient,
+        gradient: blueGradient,
         borderRadius: BorderRadius.circular(5),
       ),
       child: Container(
@@ -423,7 +254,7 @@ class _GradientOutlinedButton extends StatelessWidget {
           ),
           child: ShaderMask(
             shaderCallback: (Rect bounds) {
-              return _gradient.createShader(bounds);
+              return blueGradient.createShader(bounds);
             },
             child: Text(
               'Sign Up',
@@ -436,91 +267,6 @@ class _GradientOutlinedButton extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class SubWhiteText extends StatelessWidget {
-  const SubWhiteText({Key? key, required this.text}) : super(key: key);
-
-  final String text;
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      "Do you want to sharpen your skills? We have got you all covered.",
-      style: GoogleFonts.poppins(
-        textStyle: Theme.of(context).textTheme.subtitle1,
-        fontSize: 20,
-        color: const Color(0xffBFC5D7),
-      ),
-    );
-  }
-}
-
-class EmailEnterBox extends StatelessWidget {
-  const EmailEnterBox({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        enabled: true,
-        labelText: "Enter your Email",
-        labelStyle: const TextStyle(
-          color: Color(0xffBFC5D7),
-          fontSize: 14,
-          fontFamily: "Roboto",
-        ),
-        fillColor: Colors.white,
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25.0),
-          borderSide: const BorderSide(
-            color: Colors.blue,
-          ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25.0),
-          borderSide: const BorderSide(
-            color: Colors.blue,
-          ),
-        ),
-      ),
-      style: const TextStyle(
-        fontFamily: "Roboto",
-        color: Colors.white,
-      ),
-    );
-  }
-}
-
-class LinkText extends StatelessWidget {
-  const LinkText({Key? key, required this.name}) : super(key: key);
-
-  final String name;
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      name,
-      style: GoogleFonts.poppins(
-        textStyle: Theme.of(context).textTheme.button,
-        fontSize: 18,
-        color: const Color(0xffBFC5D7),
-      ),
-      textAlign: TextAlign.right,
-    );
-  }
-}
-
-class FooterIcon extends StatelessWidget {
-  const FooterIcon({Key? key, required this.iconImage}) : super(key: key);
-
-  final String iconImage;
-  @override
-  Widget build(BuildContext context) {
-    return Image(
-      width: 50,
-      height: 50,
-      image: AssetImage(iconImage),
     );
   }
 }

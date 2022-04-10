@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:socio_magic_web/views/home/sign_in.dart';
+import 'package:socio_magic_web/views/creator_page.dart';
+import 'package:socio_magic_web/views/sign_in.dart';
 
 import 'views/home/home_view.dart';
 
@@ -31,6 +32,6 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: const SignInPage());
+        home: const CreatorsPage());
   }
 }
