@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:socio_magic_web/widgets/customClippers/custom_clipper_2.dart';
 import 'package:socio_magic_web/widgets/footer_bar/footer.dart';
 import 'package:socio_magic_web/widgets/gradient_filled_button.dart';
@@ -17,52 +18,123 @@ class CreatorsPage extends StatelessWidget {
           child: Column(children: [
             const NavBar(),
             Padding(
-              padding: const EdgeInsets.only(left: 150, top: 100),
-              child: Column(
+                padding: const EdgeInsets.only(left: 150, top: 100),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Column(
+                          // mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            SizedBox(
+                              height: 285,
+                              width: 610,
+                              child: GradientSubHeaderText(
+                                  text:
+                                      "Influencers can now collaborate with each other to create alluring content"),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(top: 20),
+                              child: GradientButtonFilled(name: "Collaborate"),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                            height: 482,
+                            width: 590,
+                            child:
+                                Image.asset("assets/images/creatorImage.png"))
+                      ],
+                    ),
+                  ],
+                )),
+            Stack(children: <Widget>[
+              Column(
                 children: [
-                  Row(
-                    children: [
-                      Column(
-                        // mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          SizedBox(
-                            height: 285,
-                            width: 610,
-                            child: GradientSubHeaderText(
-                                text:
-                                    "Influencers can now collaborate with each other to create alluring content"),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20),
-                            child: GradientButtonFilled(name: "Collaborate"),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                          height: 482,
-                          width: 590,
-                          child: Image.asset("assets/images/creatorImage.png"))
-                    ],
+                  Container(
+                    height: 400,
+                    width: 200,
+                    color: Color(0xff080B15),
                   ),
+                  Align(
+                      alignment: Alignment.topLeft,
+                      child: CustomPaint(
+                          painter: MyPainterB(),
+                          child: SizedBox(
+                              width: MediaQuery.of(context).size.width,
+                              height: 800))),
                 ],
               ),
-            ),
-            Stack(
-              children: <Widget>[
-                Align(
-                    alignment: Alignment.topLeft,
-                    child: CustomPaint(
-                        painter: MyPainterB(),
+              Positioned(
+                top: 150,
+                left: 0,
+                right: 0,
+                child: Center(
+                  child: Container(
+                    color: const Color(0xff080B15),
+                    height: 1300,
+                    width: 1205,
+                    child: Column(children: [
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Image(
+                                image:
+                                    AssetImage("assets/images/boy_phone.png")),
+                            Column(children: const [
+                              GradientSubHeaderText(
+                                  text: "Engage, Enjoy & Earn"),
+                              SizedBox(
+                                  width: 590,
+                                  height: 144,
+                                  child: SubWhiteText(
+                                      text:
+                                          "Want to make money using social media.We are the one you might be searching , we will help you to boost your engagement matching you with brands fitting your characteristics."))
+                            ]),
+                          ]),
+                      SizedBox(height: 30),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 50),
+                          child: SizedBox(
+                            width: 600,
+                            height: 115,
+                            child: Image.asset(
+                              "assets/images/join_bar.png",
+                              scale: 0.1,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 30),
+                      const Align(
+                        alignment: Alignment.bottomRight,
                         child: SizedBox(
-                            width: MediaQuery.of(context).size.width,
-                            height: 800))),
-              ],
+                          height: 448,
+                          width: 745,
+                          child: SubWhiteText(
+                            text:
+                                "We are a one stop shop for your next marketing campaign.\n\nYou have to just create content , have fun, and make money promoting the products you already use and love.\n\nWe will also provide you with tools and support you in elevating your content level.\n\nOur platform will serve brands only with genuine and real influencers saving your precious time from all the fake and fraud ones",
+                          ),
+                        ),
+                      )
+                    ]),
+                  ),
+                ),
+              )
+            ]),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  color: const Color(0xff1C2235),
+                  child: Image.asset(
+                    "assets/images/you_we.png",
+                    alignment: Alignment.bottomCenter,
+                  )),
             ),
-            Container(
-                width: MediaQuery.of(context).size.width,
-                color: const Color(0xff1C2235),
-                child: Image.asset("assets/images/you_we.png")),
             Padding(
               padding: const EdgeInsets.only(top: 50),
               child: Row(
@@ -80,10 +152,11 @@ class CreatorsPage extends StatelessWidget {
                           SizedBox(
                             height: 216,
                             width: 488,
-                            child: SubWhiteText(
+                            child: RobotoFont(
                                 text:
                                     "Create alluring posts using the varieties of tools which are provided. You can search for popular hashtags and instagram filters or add one of your own. Add magic to your posts by using SocioMagic's Media Kit!"),
-                          )
+                          ),
+                          GradientButtonFilled(name: "Join Us"),
                         ],
                       ),
                     )
@@ -93,5 +166,53 @@ class CreatorsPage extends StatelessWidget {
             const FooterPart(),
           ]),
         ));
+  }
+}
+/* Center(
+                  child: Container(
+                    color: const Color(0xff080B15),
+                    height: 1236,
+                    width: 1205,
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            const Image(
+                                image:
+                                    AssetImage("assets/images/boy_phone.png")),
+                            Column(
+                              children: const [
+                                GradientSubHeaderText(
+                                    text: "Engage, Enjoy & Earn"),
+                                SizedBox(
+                                    width: 590,
+                                    height: 144,
+                                    child: SubWhiteText(
+                                        text:
+                                            "Want to make money using social media.We are the one you might be searching , we will help you to boost your engagement matching you with brands fitting your characteristics."))
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ) */
+
+class RobotoFont extends StatelessWidget {
+  const RobotoFont({Key? key, required this.text}) : super(key: key);
+
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.roboto(
+        textStyle: Theme.of(context).textTheme.subtitle1,
+        fontSize: 27,
+        color: const Color(0xffBFC5D7),
+        fontWeight: FontWeight.w500,
+      ),
+    );
   }
 }
