@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socio_magic_web/views/brand_page.dart';
 import 'package:socio_magic_web/views/creator_page.dart';
 import 'package:socio_magic_web/views/sign_in.dart';
 
@@ -32,6 +33,6 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: const CreatorsPage());
+        home: const BrandsPage());
   }
 }
